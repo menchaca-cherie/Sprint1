@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,63 +9,158 @@
 </head>
 <body>
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
+    <form id="student_schedule" action="confirmation.html" method="post"></form>
     <div class="row">
-        <div class="col-md-6 my-5">
-            <div class="card text-white bg-secondary ml-5" style="max-width: 30rem;">
+        <div class="col-6 my-5">
+            <div class="card text-white bg-secondary">
                 <h5 class="card-header text-center">Fall</h5>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownYearButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Year
-                    </button>
-                    <div class="dropdown-year" aria-labelledby="dropdownYearButton">
-                        <a class="dropdown-item">2023</a>
-                        <a class="dropdown-item">2024</a>
-                        <a class="dropdown-item">2025</a>
-                    </div>
-                </div>
                 <div class="card-body">
-                    <div class="form-inline">
-                        <label class="form-check-label mx-3">Class 1: </label>
-                        <input class="mx-2" type="textarea" style="max-width: 30rem;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <div class="form-group text-center">
+                                <label class="form">Class 1: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 2: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 3: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 4: </label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea">Notes:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea" rows="4"></textarea>
+                            </div>
+                            <div class="position-relative bottom-0 end-0 my-5">
+                                <button type="button" class="btn-primary px-lg-5">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 my-5">
-            <div class="card text-white bg-secondary ml-5" style="max-width: 30rem;">
+        <div class="col-sm-6 my-5">
+            <div class="card text-white bg-secondary">
                 <h5 class="card-header text-center">Winter</h5>
                 <div class="card-body">
-                    <div class="form-inline">
-                        <label class="form-check-label mx-3">Class 1: </label>
-                        <input class="mx-2" type="textarea" style="max-width: 30rem;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <div class="form-group text-center">
+                                <label class="form">Class 1: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 2: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 3: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 4: </label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Notes:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            </div>
+                            <div class="position-relative bottom-0 end-0 my-5">
+                                <button type="button" class="btn-primary px-lg-5">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 my-5">
-            <div class="card text-white bg-secondary ml-5" style="max-width: 30rem;">
+    <div id="card2" class="row">
+        <div class="col-sm-6 my-3">
+            <div class="card text-white bg-secondary">
                 <h5 class="card-header text-center">Spring</h5>
                 <div class="card-body">
-                    <div class="form-inline">
-                        <label class="form-check-label mx-3">Class 1: </label>
-                        <input class="mx-2" type="textarea" style="max-width: 30rem;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <div class="form-group text-center">
+                                <label class="form">Class 1: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 2: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 3: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 4: </label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea2">Notes:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="4"></textarea>
+                            </div>
+                            <div class="position-relative bottom-0 end-0 my-5">
+                                <button type="button" class="btn-primary px-lg-5">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 my-5">
-            <div class="card text-white bg-secondary ml-5" style="max-width: 30rem;">
+        <div class="col-sm-6 my-3">
+            <div class="card text-white bg-secondary">
                 <h5 class="card-header text-center">Summer</h5>
                 <div class="card-body">
-                    <div class="form-inline">
-                        <label class="form-check-label mx-3">Class 1: </label>
-                        <input class="mx-2" type="textarea" style="max-width: 30rem;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <div class="form-group text-center">
+                                <label class="form">Class 1: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 2: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 3: </label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form">Class 4: </label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea4">Notes:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea4" rows="4"></textarea>
+                            </div>
+                            <div class="position-relative bottom-0 end-0 my-5">
+                                <button type="button" class="btn-outline-primary px-lg-5">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="bottom-0 end-0 my-2">
+        <button type="button" class="btn-outline-primary btn-block px-lg-5 ">Save</button>
+    </div>
+    </form>
 </body>
 </html>
