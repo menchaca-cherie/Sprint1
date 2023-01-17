@@ -10,14 +10,31 @@ require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
 include('./php/token.php');
 
 $token = "";
+$saveSuccessful = false;
 $planSet = null;
 
-$token = generateToken();
-$token = $_POST['token'];
-$plan = getToken($_GET['token']);
-$token = $plan['token'];
-$planSet = $plan;
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
 
+    if (validateToken($_POST['token'])) {
+        $token = $_POST['token'];
+    }
+
+    $saveSuccessful = true;
+}
+
+else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
+    $token = generateToken();
+} else {
+    $plan = getToken($_GET['token']);
+
+    if (!empty($plan['token'])) {
+        $token = $plan['token'];
+        $planSet = $plan;
+    }
+    else {
+        header('location: ../');
+    }
+}
 
 ?>
 
@@ -30,7 +47,7 @@ $planSet = $plan;
     <link rel="stylesheet" href="styles/styles.css">
     <title>Student Schedule</title>
 </head>
-<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/"<?php echo $token ?>>
+<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/<?php echo $token; ?>">
 <button onclick="copyURL()">Copy</button>
 <body>
     <!--H1 Title-->
