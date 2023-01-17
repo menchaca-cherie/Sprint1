@@ -10,17 +10,17 @@ require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
 //include token function
 include('./php/token.php');
 
-$sql = "INSERT INTO advise_it (tokenID, fall, winter, spring, summer, date)
-VALUES (:tokenID, :fall, :winter, :spring, :summer, :date)";
+$sql = "INSERT INTO advise_it (`tokenID`, `fall`, `winter`, `spring`, `summer`, `date`)
+VALUES (':tokenID', ':fall', ':winter', ':spring', ':summer', ':date')";
 
 $statement = $dbh->prepare($sql);
 //testing
-//$tokenID = 'ABC125';
-//$fall = 'cs108';
-//$winter = 'sdev301';
-//$spring = 'sdev301';
-//$summer = 'sdev301';
-//$date = '2023-01-10';
+$tokenID = '';
+$fall = '';
+$winter = '';
+$spring = '';
+$summer = '';
+$date = '';
 
 $statement->bindParam(':tokenID', $tokenID, PDO::PARAM_STR);
 $statement->bindParam(':fall', $fall, PDO::PARAM_STR);
