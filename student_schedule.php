@@ -10,12 +10,12 @@ require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
 include('./php/token.php');
 
 $token = "";
-$plan = null;
+$planSet = null;
 
 $token = generateToken();
-$token = $plan['token'];
 $plan = getToken($_GET['token']);
-$plan .= $plan;
+$token = $plan['token'];
+$planSet = $plan;
 
 
 ?>
