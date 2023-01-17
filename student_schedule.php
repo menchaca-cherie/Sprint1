@@ -62,7 +62,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <textarea></textarea>
+                            <textarea name="fall" id="fall"></textarea>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <textarea></textarea>
+                            <textarea name="winter" id="winter"></textarea>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <textarea></textarea>
+                            <textarea name="spring" id="spring"></textarea>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <textarea></textarea>
+                            <textarea name="summer" id="summer"></textarea>
                         </div>
                     </div>
                 </div>
@@ -113,6 +113,20 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
         <button type="submit" class="btn-primary btn-block">Save</button>
     </div>
     </form>
+    <?php
+
+    if ($saveSuccessful) {
+        echo $_POST['fall'];
+        echo $_POST['winter'];
+        echo $_POST['spring'];
+        echo $_POST['summer'];
+
+        echo '<script>alert("Submit Successful")</script>';
+    }
+    else {
+        error_log("you messed up you jackass");
+    }
+    ?>
 <script src="js/function.js"></script>
 </body>
 </html>
