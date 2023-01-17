@@ -10,10 +10,12 @@ require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
 include('./php/token.php');
 
 $token = "";
+$formSent = false;
 $saveSuccessful = false;
 $planSet = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+    $formSent = true;
 
     if (validateToken($_POST['token'])) {
         $token = $_POST['token'];
@@ -123,18 +125,18 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     </form>
     <?php
 
-
-    if ($saveSuccessful) {
+    if ($formSent) {
         echo $_POST['fall'];
-        echo $planSet['fall'];
         echo $_POST['winter'];
-        echo $planSet['winter'];
         echo $_POST['spring'];
-        echo $planSet['spring'];
         echo $_POST['summer'];
+        echo '<script>alert("Submit Successful")</script>';
+    } else if (!empty($planSet)) {
+        echo $planSet['fall'];
+        echo $planSet['winter'];
+        echo $planSet['spring'];
         echo $planSet['summer'];
 
-        echo '<script>alert("Submit Successful")</script>';
     }
     else {
         error_log("you messed up you jackass");
