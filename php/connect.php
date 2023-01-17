@@ -4,7 +4,6 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include("../includes/sendEmail.php");
 
 //Connect to Database
 $username = "menchac1_sdev485";
