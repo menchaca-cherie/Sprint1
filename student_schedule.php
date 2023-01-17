@@ -157,12 +157,6 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
             <button type="submit" class="btn-primary float-right">Save</button>
         </div>
     </form>
-    <?php
-
-    if ($formSent) {
-        echo '<script>alert("Submit Successful")</script>';
-    }
-    ?>
 <script src="js/function.js"></script>
 </body>
 </html>
