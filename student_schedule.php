@@ -62,7 +62,6 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <form id="student_schedule" action="#" method="post">
 
         <input type="hidden" name="token" value="<?php echo $token ?>">
-
     <!--Starting cards first row-->
         <div class="row">
             <div class="col-sm-5 my-5 mx-auto">
