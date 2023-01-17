@@ -53,17 +53,16 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
 <body>
     <!--H1 Title-->
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
+
+    <div class="row text-center">
+        <input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
+        <button onclick="copyURL()">Copy</button>
+    </div>
     <!--Form id, action, method-->
     <form id="student_schedule" action="#" method="post">
-<<<<<<< HEAD
 
         <input type="hidden" name="token" value="<?php echo $token ?>">
-=======
-        <div class="row text-center">
-            <input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
-            <button onclick="copyURL()">Copy</button>
-        </div>
->>>>>>> 9b037929b7843584e1dacf5c1c95cb398cbbd047
+
     <!--Starting cards first row-->
         <div class="row">
             <div class="col-sm-5 my-5 mx-auto">
@@ -72,7 +71,16 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <textarea name="fall" id="fall"></textarea>
+                                <textarea name="fall" id="fall">
+                                    <?php
+                                    if ($formSent) {
+                                        echo $_POST['fall'];
+                                    }
+                                    else if (!empty($planSet)) {
+                                        echo $planSet['fall'];
+                                    }
+                                    ?>
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -84,7 +92,16 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <textarea name="winter" id="winter"></textarea>
+                                <textarea name="winter" id="winter">
+                                    <?php
+                                    if ($formSent) {
+                                        echo $_POST['winter'];
+                                    }
+                                    else if (!empty($planSet)) {
+                                        echo $planSet['winter'];
+                                    }
+                                    ?>
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -99,7 +116,16 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <textarea name="spring" id="spring"></textarea>
+                                <textarea name="spring" id="spring">
+                                    <?php
+                                    if ($formSent) {
+                                        echo $_POST['spring'];
+                                    }
+                                    else if (!empty($planSet)) {
+                                        echo $planSet['spring'];
+                                    }
+                                    ?>
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -111,7 +137,16 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <textarea name="summer" id="summer"></textarea>
+                                <textarea name="summer" id="summer">
+                                    <?php
+                                    if ($formSent) {
+                                        echo $_POST['summer'];
+                                    }
+                                    else if (!empty($planSet)) {
+                                        echo $planSet['summer'];
+                                    }
+                                    ?>
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -126,20 +161,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <?php
 
     if ($formSent) {
-        echo $_POST['fall'];
-        echo $_POST['winter'];
-        echo $_POST['spring'];
-        echo $_POST['summer'];
         echo '<script>alert("Submit Successful")</script>';
-    } else if (!empty($planSet)) {
-        echo $planSet['fall'];
-        echo $planSet['winter'];
-        echo $planSet['spring'];
-        echo $planSet['summer'];
-
-    }
-    else {
-        error_log("you messed up you jackass");
     }
     ?>
 <script src="js/function.js"></script>
