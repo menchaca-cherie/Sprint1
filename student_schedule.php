@@ -55,15 +55,11 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
     <!--Form id, action, method-->
     <form id="student_schedule" action="#" method="post">
-<<<<<<< HEAD
-
         <input type="hidden" name="token" value="<?php echo $token ?>">
-=======
-        <div class="row text-center">
+        <div class="col-sm-4 text-center">
             <input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
             <button onclick="copyURL()">Copy</button>
         </div>
->>>>>>> 9b037929b7843584e1dacf5c1c95cb398cbbd047
     <!--Starting cards first row-->
         <div class="row">
             <div class="col-sm-5 my-5 mx-auto">
