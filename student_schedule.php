@@ -14,6 +14,7 @@ $planSession = null;
 
 $token = generateToken();
 $plan = getToken($_GET['token']);
+$token = $plan['token'];
 $planSession = $plan;
 
 
