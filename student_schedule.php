@@ -110,7 +110,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     </div>
 <!--Primary Save Button for all quarters-->
     <div class="bottom-0 end-0 my-2 mx-auto">
-        <button type="submit" class="btn-primary btn-block">Save</button>
+        <button type="submit" class="btn-primary float-right">Save</button>
     </div>
     </form>
 <script src="js/function.js"></script>
