@@ -54,6 +54,8 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
     <!--Form id, action, method-->
     <form id="student_schedule" action="#" method="post">
+
+        <input type="hidden" name="token" value="<?php echo $token ?>">
     <!--Starting cards first row-->
     <div class="row">
         <div class="col-sm-5 my-5 mx-auto">
@@ -117,9 +119,13 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
 
     if ($saveSuccessful) {
         echo $_POST['fall'];
+        echo $planSet['fall'];
         echo $_POST['winter'];
+        echo $planSet['winter'];
         echo $_POST['spring'];
+        echo $planSet['spring'];
         echo $_POST['summer'];
+        echo $planSet['summer'];
 
         echo '<script>alert("Submit Successful")</script>';
     }
