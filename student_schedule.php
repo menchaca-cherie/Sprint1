@@ -22,7 +22,8 @@ $token = "";
     <link rel="stylesheet" href="styles/styles.css">
     <title>Student Schedule</title>
 </head>
-<!--Body for Sprint1 Student Schedule-->
+<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/" <?php echo $token ?>>
+<button onclick="copyURL()">Copy</button>
 <body>
     <!--H1 Title-->
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
@@ -87,5 +88,6 @@ $token = "";
         <button type="submit" class="btn-primary btn-block">Save</button>
     </div>
     </form>
+<script src="js/function.js"></script>
 </body>
 </html>
