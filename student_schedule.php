@@ -15,12 +15,12 @@ VALUES (:tokenID, :fall, :winter, :spring, :summer, :date)";
 
 $statement = $dbh->prepare($sql);
 //testing
-$tokenID = 'ABC125';
-$fall = 'cs108';
-$winter = 'sdev301';
-$spring = 'sdev301';
-$summer = 'sdev301';
-$date = '2023-01-10';
+//$tokenID = 'ABC125';
+//$fall = 'cs108';
+//$winter = 'sdev301';
+//$spring = 'sdev301';
+//$summer = 'sdev301';
+//$date = '2023-01-10';
 
 $statement->bindParam(':tokenID', $tokenID, PDO::PARAM_STR);
 $statement->bindParam(':fall', $fall, PDO::PARAM_STR);
@@ -74,10 +74,11 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
 </head>
 
 <body>
+    <button href="advisors_home.html" class="btn btn-primary btn-lg ml-5">Back</button>
     <!--H1 Title-->
-    <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
+    <h1 class="mb-auto text-center text-nowra   p no-mobile">Student Schedule</h1>
 
-    <div class="row text-center">
+    <div class="row justify-content-center">
         <input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
         <button onclick="copyURL()">Copy</button>
     </div>
@@ -93,7 +94,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <textarea name="fall" id="fall">
+                                <textarea class="justify-content-center" name="fall" id="fall">
                                     <?php
                                     if ($formSent) {
                                         echo $_POST['fall'];
@@ -177,7 +178,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
         </div>
 <!--Primary Save Button for all quarters-->
         <div class="bottom-0 end-0 my-2 mx-auto">
-            <button type="submit" class="btn-primary float-right">Save</button>
+            <button type="submit" class="btn btn-primary btn-lg mr-5 float-right">Save</button>
         </div>
     </form>
 <script src="js/function.js"></script>
