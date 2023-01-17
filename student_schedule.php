@@ -47,7 +47,7 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <link rel="stylesheet" href="styles/styles.css">
     <title>Student Schedule</title>
 </head>
-<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/<?php echo $token; ?>">
+<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
 <button onclick="copyURL()">Copy</button>
 <body>
     <!--H1 Title-->
