@@ -47,75 +47,82 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
     <link rel="stylesheet" href="styles/styles.css">
     <title>Student Schedule</title>
 </head>
-<input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
-<button onclick="copyURL()">Copy</button>
+
 <body>
     <!--H1 Title-->
     <h1 class="mb-auto text-center text-nowrap no-mobile">Student Schedule</h1>
     <!--Form id, action, method-->
     <form id="student_schedule" action="#" method="post">
+<<<<<<< HEAD
 
         <input type="hidden" name="token" value="<?php echo $token ?>">
+=======
+        <div class="row text-center">
+            <input type="text" id="url" value="https://menchaca.cherie.greenriverdev.com/485/Sprint1/student_schedule.php/?token=<?php echo $token; ?>">
+            <button onclick="copyURL()">Copy</button>
+        </div>
+>>>>>>> 9b037929b7843584e1dacf5c1c95cb398cbbd047
     <!--Starting cards first row-->
-    <div class="row">
-        <div class="col-sm-5 my-5 mx-auto">
-            <div class="card text-white bg-secondary">
-                <h5 class="card-header text-center">Fall</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <textarea name="fall" id="fall"></textarea>
+        <div class="row">
+            <div class="col-sm-5 my-5 mx-auto">
+                <div class="card text-white bg-secondary">
+                    <h5 class="card-header text-center">Fall</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <textarea name="fall" id="fall"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 my-5 mx-auto">
+                <div class="card text-white bg-secondary">
+                    <h5 class="card-header text-center">Winter</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <textarea name="winter" id="winter"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-5 my-5 mx-auto">
-            <div class="card text-white bg-secondary">
-                <h5 class="card-header text-center">Winter</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <textarea name="winter" id="winter"></textarea>
+    <!--Starting card 2nd row-->
+        <div id="card2" class="row">
+            <div class="col-sm-5 my-3 mx-auto">
+                <div class="card text-white bg-secondary">
+                    <h5 class="card-header text-center">Spring</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <textarea name="spring" id="spring"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 my-3 mx-auto">
+                <div class="card text-white bg-secondary">
+                    <h5 class="card-header text-center">Summer</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <textarea name="summer" id="summer"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<!--Starting card 2nd row-->
-    <div id="card2" class="row">
-        <div class="col-sm-5 my-3 mx-auto">
-            <div class="card text-white bg-secondary">
-                <h5 class="card-header text-center">Spring</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <textarea name="spring" id="spring"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5 my-3 mx-auto">
-            <div class="card text-white bg-secondary">
-                <h5 class="card-header text-center">Summer</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <textarea name="summer" id="summer"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 <!--Primary Save Button for all quarters-->
-    <div class="bottom-0 end-0 my-2 mx-auto">
-        <button type="submit" class="btn-primary float-right">Save</button>
-    </div>
+        <div class="bottom-0 end-0 my-2 mx-auto">
+            <button type="submit" class="btn-primary float-right">Save</button>
+        </div>
     </form>
     <?php
+
 
     if ($saveSuccessful) {
         echo $_POST['fall'];
