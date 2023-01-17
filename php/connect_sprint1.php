@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 
 //Connect to Database
-$username = "menchaca_grcuser";
+$username = "menchac1_sdev485";
 $password = "HIwarrior12";
 $hostname = "localhost";
-$database = "menchaca_grc";
+$database = "menchac1_Plans";
 
 $cnxn = @mysqli_connect($hostname, $username, $password, $database)
 or die("<p>Oops! We weren't able to connect to the database</p>");
