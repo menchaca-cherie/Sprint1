@@ -14,7 +14,7 @@ $sql = "INSERT INTO advise_it (tokenID, fall, winter, spring, summer, date)
 VALUES (:tokenID, :fall, :winter, :spring, :summer, :date)";
 
 $statement = $dbh->prepare($sql);
-
+//testing
 $tokenID = 'ABC125';
 $fall = 'cs108';
 $winter = 'sdev301';
@@ -22,7 +22,7 @@ $spring = 'sdev301';
 $summer = 'sdev301';
 $date = '2023-01-10';
 
-$statement->bindParam(':name', $tokenID, PDO::PARAM_STR);
+$statement->bindParam(':tokenID', $tokenID, PDO::PARAM_STR);
 $statement->bindParam(':fall', $fall, PDO::PARAM_STR);
 $statement->bindParam(':winter', $winter, PDO::PARAM_STR);
 $statement->bindParam(':spring', $spring, PDO::PARAM_STR);
