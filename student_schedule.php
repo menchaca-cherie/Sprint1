@@ -3,8 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Create PDO
-require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
+
 
 //include token function
 include('./php/token.php');
