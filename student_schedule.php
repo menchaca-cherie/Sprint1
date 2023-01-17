@@ -156,6 +156,20 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
         <div class="bottom-0 end-0 my-2 mx-auto">
             <button type="submit" class="btn-primary float-right">Save</button>
         </div>
+        <?php
+        $token = $_POST['token'];
+        $fall = $_POST['fall'];
+        $winter = $_POST['winter'];
+        $spring = $_POST['spring'];
+        $summer = $_POST['summer'];
+        $sql_add = "INSERT INTO advise_it (`tokenID`, `fall`, `winter`, `spring`, `summer`)
+        VALUES ('$token', '$fall', '$winter', '$spring', '$summer')";
+        if(cnxn->query($sql_add) === TRUE){
+            echo "New schedule created";
+        }else{
+            echo "Something went wrong";
+        }
+        ?>
     </form>
 <script src="js/function.js"></script>
 </body>
