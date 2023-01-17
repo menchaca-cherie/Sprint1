@@ -29,6 +29,9 @@ $statement->bindParam(':spring', $spring, PDO::PARAM_STR);
 $statement->bindParam(':summer', $summer, PDO::PARAM_STR);
 $statement->bindParam(':date', $date, PDO::PARAM_STR);
 
+//4. Execute the statement
+$statement->execute();
+
 $token = "";
 $formSent = false;
 $saveSuccessful = false;
