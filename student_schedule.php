@@ -13,6 +13,7 @@ $token = "";
 $planSet = null;
 
 $token = generateToken();
+$token = $_POST['token'];
 $plan = getToken($_GET['token']);
 $token = $plan['token'];
 $planSet = $plan;
