@@ -4,11 +4,30 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 
+require_once $_SERVER["DOCUMENT_ROOT"].'/../config.php';
 
 
 //include token function
 include('./php/token.php');
-include('./php/connect.php');
+
+$sql = "INSERT INTO advise_it (tokenID, fall, winter, spring, summer, date)
+VALUES (:tokenID, :fall, :winter, :spring, :summer, :date)";
+
+$statement = $dbh->prepare($sql);
+
+$tokenID = 'ABC125';
+$fall = 'cs108';
+$winter = 'sdev301';
+$spring = 'sdev301';
+$summer = 'sdev301';
+$date = '2023-01-10';
+
+$statement->bindParam(':name', $tokenID, PDO::PARAM_STR);
+$statement->bindParam(':fall', $fall, PDO::PARAM_STR);
+$statement->bindParam(':winter', $winter, PDO::PARAM_STR);
+$statement->bindParam(':spring', $spring, PDO::PARAM_STR);
+$statement->bindParam(':summer', $summer, PDO::PARAM_STR);
+$statement->bindParam(':date', $date, PDO::PARAM_STR);
 
 $token = "";
 $formSent = false;
@@ -157,20 +176,6 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
         <div class="bottom-0 end-0 my-2 mx-auto">
             <button type="submit" class="btn-primary float-right">Save</button>
         </div>
-        <?php
-        $token = $_REQUEST['token'];
-        $fall = $_REQUEST['fall'];
-        $winter = $_REQUEST['winter'];
-        $spring = $_REQUEST['spring'];
-        $summer = $_REQUEST['summer'];
-        $sql_add = "INSERT INTO advise_it (`tokenID`, `fall`, `winter`, `spring`, `summer`)
-        VALUES ('$token', '$fall', '$winter', '$spring', '$summer')";
-        if(cnxn->query($sql_add) === TRUE){
-            echo "New schedule created";
-        }else{
-            echo "Something went wrong";
-        }
-        ?>
     </form>
 <script src="js/function.js"></script>
 </body>
