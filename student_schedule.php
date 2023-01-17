@@ -5,8 +5,10 @@ error_reporting(E_ALL);
 
 
 
+
 //include token function
 include('./php/token.php');
+include('./php/connect.php');
 
 $token = "";
 $formSent = false;
@@ -156,11 +158,11 @@ else if (empty($_GET['token']) || !validateToken($_GET['token'])) {
             <button type="submit" class="btn-primary float-right">Save</button>
         </div>
         <?php
-        $token = $_POST['token'];
-        $fall = $_POST['fall'];
-        $winter = $_POST['winter'];
-        $spring = $_POST['spring'];
-        $summer = $_POST['summer'];
+        $token = $_REQUEST['token'];
+        $fall = $_REQUEST['fall'];
+        $winter = $_REQUEST['winter'];
+        $spring = $_REQUEST['spring'];
+        $summer = $_REQUEST['summer'];
         $sql_add = "INSERT INTO advise_it (`tokenID`, `fall`, `winter`, `spring`, `summer`)
         VALUES ('$token', '$fall', '$winter', '$spring', '$summer')";
         if(cnxn->query($sql_add) === TRUE){
