@@ -1,6 +1,7 @@
 <?php
 //include token function
 include('./php/token.php');
+include('./php/connect.php');
 
 //testing
 if (!empty($tokenID)) {
@@ -11,6 +12,13 @@ else {
     $tokenID = generateToken();
 }
 
+$sql = "SELECT tokenID, fall, winter, spring, summer, date FROM advise_it";
+
+$result = cnxn -> query($sql);
+
+//if statement
+if($result-> num_rows >0)
+    echo "Token: "
 
 ?>
 
@@ -40,7 +48,7 @@ else {
 <!--Form id, action, method-->
 <form id="student_schedule" action="confirmation.php" method="post">
 
-    <input type="hidden" name="token" value="<?php echo $tokenID ?>">
+    <input type="hidden" name="tokenID" value="<?php echo $tokenID ?>">
     <!--Starting cards first row-->
     <div class="row">
         <div class="col-sm-5 my-5 mx-auto">
